@@ -1,32 +1,60 @@
 .App{
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .table_wrapper{
     width: 1000px;
-    background: #63c7dd;
+    background: #f7f7f7;
+    box-sizing: border-box;
+    padding: 24px;
 }
 .table_header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-bottom: 2px black solid;
+    border-bottom: 1px #f29898 solid;
+    color: gray;
+    padding-bottom: 20px;
 }
 .table_item{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 15px 0;
+}
+.save_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 162px;
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    background: #d53131;
+    border-radius: 18px;
+    margin-top: 28px;
+    margin-left: 15px;  
 }
 .edit_btn{
-    background: green;
-    width: 50px;
-    height: 50px;
+    background: url('./static/image/pencil.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+    
 }
 .delete_btn{
-    background: red;
-    width: 50px;
-    height: 50px;
+    background: url('./static/image/delete.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+
 }
 .item{
     width: 100px;
@@ -35,11 +63,35 @@
     align-items: center;
     text-align: center;
     margin-left: 20px;
+    font-size: 14px;
 }
-
-
+.submit{
+    background: green;
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    border-bottom: 1px #80808066 solid;
+}
 /********************/
-
+label{
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
 input{
-    margin: 20px;
+    height: 40px;
+    width: 450px;
+    margin: 10px 12px;
+    padding-left: 20px;
+    border: #80808033 1px solid;
+    border-radius: 18px;
+    box-sizing: border-box;
+    background: white;
+    font-size: 16px;
 }

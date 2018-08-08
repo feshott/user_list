@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import ModalForm from './components/ModalForm';
+import ItemView from './components/ItemView/ItemView';
 import './App.css';
 
 class App extends Component {
 
   state = {
-    controlShow:0,
+    controlShow: 0,
     users: [
       {
-        id: 1,
+        id: 12,
         name: 'Ivan',
         cell: '+79288233485',
         email: 'test@gmail.com',
@@ -17,7 +19,7 @@ class App extends Component {
         activ_subscription: '---',
       },
       {
-        id: 2,
+        id: 23,
         name: 'Egor',
         cell: '+73238233485',
         email: 'test2@gmail.com',
@@ -27,7 +29,7 @@ class App extends Component {
         activ_subscription: '---',
       },
       {
-        id: 3,
+        id: 4,
         name: 'Anna',
         cell: '+74423223485',
         email: 'test3@gmail.com',
@@ -39,24 +41,18 @@ class App extends Component {
     ]
   }
 
+  // deleteUser = (elem) => {
+  //   const userId = elem.target.dataset.id;
+  //   const currUsers = this.state.users;
+  //   let newUsers;
 
-  createItem = elem => {
-    const { name, cell, email, last_meeting, sum_pay, sum_meeting, activ_subscription, id } = elem
-
-    return < div className="table_item" key={id}>
-
-      <div className="edit_btn" data-id={id}></div>
-      <div className="delete_btn" data-id={id}></div>
-
-      <div className="item name">{name}</div>
-      <div className="item cell">{cell}</div>
-      <div className="item email">{email}</div>
-      <div className="item last_meeting">{last_meeting}</div>
-      <div className="item sum_pay">{sum_pay}</div>
-      <div className="item sum_meeting">{sum_meeting}</div>
-      <div className="item activ_subscription">{activ_subscription}</div>
-    </div >
-  }
+  //   currUsers.map((user, index) => {
+  //     if (user.id == userId) {
+  //       newUsers = currUsers.slice(0, index).concat(currUsers.slice(index + 1))
+  //       this.setState({ users: newUsers })
+  //     }
+  //   })
+  // };
 
   render() {
     const { users } = this.state
@@ -64,14 +60,7 @@ class App extends Component {
       <div className="App">
         <div className="table_wrapper">
 
-          <div className="control_wrapper">
-            <form action="">
-              <input type="text" placeholder='имя' />
-              <input type="text" placeholder='емаил' />
-              <input type="text" placeholder='телефон' />
-              <input type="submit" />
-            </form>
-          </div>
+          <ModalForm  />
 
           <div className="table_header">
             <div className="item name">Клиент</div>
@@ -83,7 +72,7 @@ class App extends Component {
             <div className="item activ_subscription">Активный абонемент</div>
           </div>
 
-          {users.map(elem => this.createItem(elem))}
+          {users.map((item,index) => <ItemView {...item} key={index}/>)} 
 
         </div>
       </div>
