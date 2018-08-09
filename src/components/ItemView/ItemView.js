@@ -5,8 +5,8 @@ export default function ItemView(props) {
 
   return (< div className="table_item" >
 
-    <div className="edit_btn" data-id={props.id}></div>
-    <div className="delete_btn" data-id={props.id}></div>
+    <div className="edit_btn" data-id={props.id} onClick={props.handleSetEditable}></div>
+    <div className="delete_btn" data-id={props.id} onClick={props.handleDelete}></div>
 
     <div className="item name">{props.name}</div>
     <div className="item cell">{props.cell}</div>
